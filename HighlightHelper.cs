@@ -85,11 +85,12 @@ public class HighlightHelper {
 
         float circleSize = bounds.size.magnitude*0.5f;
 
-        Handles.CircleCap(0, bounds.center,
-            sceneGameObject.transform.rotation, circleSize - onePixelOffset);
-        Handles.CircleCap(0, bounds.center,
-            sceneGameObject.transform.rotation, circleSize + onePixelOffset);
-        Handles.CircleCap(0, bounds.center, sceneGameObject.transform.rotation, circleSize);
+        Handles.CircleHandleCap(0, bounds.center,
+            sceneGameObject.transform.rotation, circleSize - onePixelOffset, EventType.Repaint);
+        Handles.CircleHandleCap(0, bounds.center,
+            sceneGameObject.transform.rotation, circleSize + onePixelOffset, EventType.Repaint);
+        Handles.CircleHandleCap(0, bounds.center, 
+            sceneGameObject.transform.rotation, circleSize, EventType.Repaint);
     }
 
     private static int _hoveredInstance;
